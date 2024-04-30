@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  app:
+    container_name: container_app
+    image: dockerizar
+    build: .
+    ports:
+      - 8088:8088
+    environment:
+      - SPRING.DATASOURCE.URL=jdbc:postgresql://db:5432/datadb
+      - SPRING.DATASOURCE.USERNAME=postgres
+      - SPRING.DATASOURCE.PASSWORD=postgres
+      - SPRING.JPA.HIBERNATE.DDL-AUTO=update
+    depends_on:
+      - db  
+  db:
+    container_name: container_db
+    image: postgres:9-alpine
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: datadb 
+    volumes:
+      - ./db_postgres/dockerizar:/var/lib/postgresql/data
+
+      

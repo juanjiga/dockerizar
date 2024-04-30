@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="tabla.css">
+    <link rel="stylesheet" href="formulario.css">
+    <title>Dockerizar</title>
+</head>
+<body>
+    <h1>------</h1>
+    <table id="tabla">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Teléfono</th>      
+            <th scope="col">Acción</th>    
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <div id="formulario" class="formbold-main-wrapper">    
+      <div class="formbold-form-wrapper"> 
+        <form method="POST">
+          <div class="formbold-form-title">
+            <h2 class="">Modificar Usuario</h2>
+            <p>
+             Introducir nombre y número
+            </p>
+          </div>
+          <div class="formbold-input-flex">
+            <div>
+              <label for="nombre" class="formbold-form-label"> Nombre </label>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                class="formbold-form-input"
+              />
+            </div>
+            <div>
+              <label for="telefono" class="formbold-form-label"> Teléfono </label>
+              <input
+                type="number"
+                name="telefono"
+                id="telefono"
+                class="formbold-form-input"
+              />
+            </div>
+          </div>
+          <div> 
+            <button id="btnModificar" class="formbold-btn"> Modificar </button>
+          </div>   
+        </form>
+      </div>
+    </div>
+    <script src = "tabla.js"></script>
+</body>
+</html>
